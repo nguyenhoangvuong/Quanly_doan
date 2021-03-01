@@ -1,0 +1,55 @@
+.center-parent5 .tittle-sv{
+  color: #31708f;
+  background-color: #d9edf7;
+  border-color: #bce8f1;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  margin-top: 8px;
+}
+
+.center-parent5 .tittle-sv .add-sv{
+    background-color: #0088cc;
+    padding: 9px;
+    color: aliceblue;
+    border-radius: 4px;
+    width: 90px;
+}
+.center-parent5 .tittle-sv .add-sv:hover{
+    background-color: #02354f;
+    cursor: pointer;
+}
+.btn-search:hover{
+    background-color: #02354f;
+    cursor: pointer;
+}
+.btn-refresh:hover{
+    background-color: #02354f;
+    cursor: pointer;
+}
+.center-parent5 .action-sv .search-sv{
+    border: 1px solid #c9c9c9;
+    padding: 5px;
+    margin-right: 4px;
+}
+.center-parent5 .action-sv .search-sv input{
+    width: 80px;
+}
+
+select{
+    height: 28px;
+    outline: none;
+}
+
+.center-parent5 .action-sv .btn-search,.btn-refresh{
+    background-color: #0088cc;
+    padding: 9px;
+    color: aliceblue;
+    border-radius: 4px;
+    width: 90px;
+}
+.center-parent5 .action-sv .btn-search{
+    margin-left: 10%;
+}
+

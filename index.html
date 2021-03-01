@@ -8,8 +8,9 @@
 
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="Sinhvien.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
-
+    <script src="filereader-input-example.js"></script>
     <title>Do An</title>
 </head>
 
@@ -55,10 +56,10 @@
                                 <button class="btn home1"><em class="fas fa-book-reader"></em> Quản lý khoa</button>
                             </li>
                             <li>
-                                <button class="btn home2"><em class="fas fa-boxes"></em> Quản lý niên khóa</button>
+                                <button class="btn home2"><em class="fas fa-boxes"></em> Quản lý hệ đào tạo</button>
                             </li>
                             <li>
-                                <button class="btn home2"><em class="fas fa-school"></em> Quản lý lớp</button>
+                                <button class="btn home3"><em class="fas fa-school"></em> Quản lý lớp</button>
                             </li>
                             <li>
                                 <button class="btn home4"><em class="fas fa-chalkboard-teacher"></em> Quản lý giáo
@@ -81,35 +82,35 @@
                 <div class="content-right">
                     <!-- Trang chủ -->
                     <div class="center-parent">
-                        <h2>Quan Ly Do An</h2>
+                        <h2 style="text-align: center;">Trang chủ</h2>
                         <div class="project flex f-wrap">
-                            <div class="project-content">
-                                <p>5</p>
+                            <div class="project-content" style="background-color: rgb(130, 162, 151);">
+                                <h2>5</h2>
                                 <p>Tổng số sinh viên</p>
                                 <button>xem</button>
                             </div>
-                            <div class="project-content">
-                                <p>5</p>
+                            <div class="project-content" style="background-color: rgb(96, 90, 128);">
+                                <h2>5</h2>
                                 <p>Tổng số khoa</p>
                                 <button>xem</button>
                             </div>
-                            <div class="project-content">
-                                <p>5</p>
+                            <div class="project-content" style="background-color: rgb(134, 131, 228);">
+                                <h2>5</h2>
                                 <p>Tổng số lớp</p>
                                 <button>xem</button>
                             </div>
-                            <div class="project-content">
-                                <p>5</p>
+                            <div class="project-content" style="background-color: rgb(194, 184, 145);">
+                                <h2>5</h2>
                                 <p>Tổng số giáo viên</p>
                                 <button>xem</button>
                             </div>
-                            <div class="project-content">
-                                <p>5</p>
+                            <div class="project-content" style="background-color: rgb(213, 137, 156);">
+                                <h2>5</h2>
                                 <p>Tổng số sinh viên</p>
                                 <button>xem</button>
                             </div>
-                            <div class="project-content">
-                                <p>5</p>
+                            <div class="project-content" style="background-color: rgb(205, 218, 150);">
+                                <h2>5</h2>
                                 <p>Tổng số đồ án</p>
                                 <button>xem</button>
                             </div>
@@ -118,19 +119,68 @@
 
                     <!-- Quản lý khoa -->
                     <div class="center-parent1">
-                        <h2>Quan Ly Do An</h2>
-                        <div class="project flex f-wrap">
-                            <div class="project-content">
-                                <p>5</p>
-                                <p>Tong so sinh vien</p>
-                                <button>xem</button>
-                            </div>
+                        <h2 style="text-align: center;">Quản lý khoa</h2>
+                    </div>
+                    <!-- Quản lý hệ đào tạo -->
+                    <div class="center-parent2">
+                        <h2 style="text-align: center;">Quản lý hệ đào tạo</h2>
+                    </div>
+                    <!-- Quản lý lớp -->
+                    <div class="center-parent3">
+                        <h2 style="text-align: center;">Quản lý lớp</h2>
+                    </div>
+                    <!-- Quản lý giáo viên -->
+                    <div class="center-parent4">
+                        <h2 style="text-align: center;">Quản lý giáo viên</h2>
+                    </div>
+                    <!-- Quản lý sinh viên -->
+                    <div class="center-parent5">
+                        <h2 style="text-align: center;">Quản lý sinh viên</h2>
+                        </br>
+                        <div class="tittle-sv">
+                            <em class="far fa-envelope"></em>
+                            <span class="student">
+                                > Sinh Viên >
+                            </span>
+                            <button class="add-sv"><em class="fas fa-add"></em>Thêm mới</button>
+                        </div>
+
+                        <div class="action-sv">
+                            <span class="search-sv">
+                                <input type="text" placeholder="Mã sinh viên">
+                            </span>
+                            <label for="hedaotao">--Hệ đạo tào:</label>
+                            <select name="hedaotao">
+                                <option value="it">All</option>
+                                <option value="it">Chính quy</option>
+                                <option value="kt">Vừa học vừa làm</option>
+                                <option value="ct">Cao học</option>
+                            </select>
+
+                            <label for="khoa">--Khóa:</label>
+                            <select name="khoa">
+                                <option value="it">Khóa 59</option>
+                                <option value="kt">Khóa 58</option>
+                                <option value="ct">Khóa 57</option>
+                            </select>
+
+                            <label for="lop">--Lớp:</label>
+                            <select name="lop">
+                                <option value="it">Công nghệ thông tin</option>
+                                <option value="kt">Kinh tế</option>
+                                <option value="ct">Công trình</option>
+                            </select>
+                            <button class="btn-refresh"><em class="fas fa-search"></em>Tìm kiếm</button>
+                            <button class="btn-refresh"><em class="fas fa-restart"></em>Làm mới</button>
                         </div>
                     </div>
-
+                    <!-- Quản lý đồ án sinh viên -->
+                    <div class="center-parent6">
+                        <h2 style="text-align: center;">Quản lý đồ án sinh viên</h2>
+                    </div>
                     <!-- kiếm tra đồ án -->
                     <div class="center-parent7">
-                        <h2>Quản Lý Tài Liệu</h2>
+                        <h2 style="text-align: center;margin-bottom: 25px;">Quản Lý Tài Liệu</h2>
                         <div class="tittle">
                             <button id="btn-close-tip" type="button" class="close" data-dismiss="alert"
                                 aria-hidden="true" data-plugin-tooltip="" data-toggle="tooltip" title=""
@@ -142,7 +192,7 @@
                         <div class="up">
                             <div>
                                 <input type="file" onchange="changeHandler(event)" class="btnSelectTT">
-                                <output id="log-div"></output>
+
                             </div>
                             <div class="select">
                                 <label>
@@ -152,6 +202,7 @@
                                 </label>
                             </div>
                         </div>
+
                         <!-- Bảng đồ án -->
                         <div class="row">
                             <div class="col-sm-12">
@@ -198,10 +249,13 @@
                                         </tr>
                                     </tbody>
                                 </table>
+
                                 <div id="dataTableBuilder_processing" class="dataTables_processing panel panel-default"
-                                    style="display: none;"><i class="fa fa-spin fa-spinner"></i> Đang xử lý...</div>
+                                    style="display: none;"><i class="fa fa-spin fa-spinner"></i> Đang xử lý...
+                                </div>
                             </div>
                         </div>
+                        <output id="log-div"></output>
                     </div>
 
                 </div>

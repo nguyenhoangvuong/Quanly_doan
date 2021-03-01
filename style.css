@@ -271,10 +271,9 @@ header .container .header-right .use button i {
   padding: 20px;
 }
 
-.app .section-1 .container .content-right .center-parent1{
-  display: none;
-}
-.app .section-1 .container .content-right .center-parent7{
+.app .section-1 .container .content-right .center-parent1,
+.center-parent2,.center-parent3,.center-parent4,.center-parent5,
+.center-parent6,.center-parent7{
   display: none;
 }
 
@@ -413,6 +412,7 @@ h2 {
 
 .app .section-1 .container .content-right .center-parent .project {
   padding-top: 20px;
+  width: 1100px;
 }
 
 .app .section-1 .container .content-right .center-parent .project .project-content {
@@ -422,14 +422,23 @@ h2 {
   margin: 10px;
 }
 
+.app .section-1 .container .content-right .center-parent .project .project-content p,h2{
+  text-align: right;
+}
+
 .app .section-1 .container .content-right .center-parent .project .project-content button {
   margin-top: 10px;
-  border: #bfcad5 1px solid;
-  border-radius: 3px;
-  padding: 3px 12px;
+  padding: 5px 12px;
+  height: 30px;
   cursor: pointer;
   -webkit-transition: all 0.25s;
   transition: all 0.25s;
+  width: 108%;
+  background-color: #91b2d6;
+  margin-left: -8px;
+  margin-bottom: -8px;
+  font-size: 1rem;
+  font-family: 'Courier New', Courier, monospace;
 }
 
 .app .section-1 .container .content-right .center-parent .project .project-content button:hover {
@@ -437,6 +446,7 @@ h2 {
   background-color: #5A94F4;
   color: #fff;
 }
+
 /* footer */
 .footer{
   background-color: var(--black);
