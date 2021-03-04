@@ -351,17 +351,11 @@ table.table-bordered.dataTable th, table.table-bordered.dataTable td {
   cursor: pointer;
   position: relative;
 }
-.table-bordered>thead>tr>td, .table-bordered>thead>tr>th {
-  border-bottom-width: 2px;
-}
-/*  */
+
 .table-bordered>tbody>tr>td, .table-bordered>tbody>tr>th, .table-bordered>tfoot>tr>td, .table-bordered>tfoot>tr>th, .table-bordered>thead>tr>td, .table-bordered>thead>tr>th {
   border: 1px solid #ddd;
 }
-.table>thead>tr>th {
-  vertical-align: bottom;
-  border-bottom: 2px solid #ddd;
-}
+
 .table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th {
   padding: 8px;
   line-height: 1.42857143;
@@ -446,6 +440,7 @@ h2 {
   background-color: #5A94F4;
   color: #fff;
 }
+
 
 /* footer */
 .footer{

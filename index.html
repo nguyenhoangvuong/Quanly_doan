@@ -120,10 +120,106 @@
                     <!-- Quản lý khoa -->
                     <div class="center-parent1">
                         <h2 style="text-align: center;">Quản lý khoa</h2>
+                    </br>
+                    <div class="tittle-list">
+                        <em class="fas fa-home"></em>
+                        <span class="student">
+                            > Khoa >
+                        </span>
+                        <button class="btn-addnew btn-hdt"><em class="fas fa-plus"></em> Thêm mới</button>
+
+                        <!--  -->
+                        <div class="content-hdt-full conn">
+                            <div class="hdt-tittle">
+                                <em class="fas fa-home"></em> Thêm mới khoa
+                            </div>
+                            <div class="left">
+                                <div class="add-left">Tên khoa: </div>
+                                <div class="add-left">Mã khoa: </div>
+                                <div class="add-left">Ngày thành lập: </div>
+                                <div class="add-left">Mô tả: </div>
+                            </div>
+                            <div class="right">
+                                <div class="add-right"><input type="text" placeholder="VD:Chính quy"></div>
+                                <div class="add-right"><input type="text" placeholder="VD:CQ"></div>
+                            </div>
+                            <div class="btn-action">
+                                <button class="btn btn-save"><em class="fas fa-save"></em> Lưu</button>
+                                <button class="btn btn-refresh" id="hdt-back"><em class="fas fa-save"></em> Làm mới</button>
+                                <button class="btn btn-back"><em class="fas fa-save"></em> Trở về</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="content-hdt-full">
+                        <div class="content-hdt">
+                            <div class="hdt-tittle">
+                                <em class="fas fa-home"></em> Danh sách
+                            </div>
+                        </div>
+                        <br>
+                        <div class="content-table">
+                            <table class="table-k" role="grid" aria-describedby="dataTableBuilder_info">
+                                <tr>
+                                    <th id="name-k" style="width: 30%;">Tên khoa</th>
+                                    <th id="ma-k">Mã khoa</th>
+                                    <th id="day-k">Ngày thành lập</th>
+                                    <th id="dir-k" style="width: 27%;">Mô tả</th>
+                                    <th id="action-k">Thao tác</th>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
                     </div>
                     <!-- Quản lý hệ đào tạo -->
                     <div class="center-parent2">
                         <h2 style="text-align: center;">Quản lý hệ đào tạo</h2>
+                        </br>
+                        <div class="tittle-list">
+                            <em class="fas fa-home"></em>
+                            <span class="student">
+                                > Hệ đào tạo >
+                            </span>
+                            <button class="btn-addnew btn-hdt"><em class="fas fa-plus"></em> Thêm mới</button>
+
+                            <!--  -->
+                            <div class="content-hdt-full conn">
+                                <div class="hdt-tittle">
+                                    <em class="fas fa-home"></em> Thêm mới hệ đào tạo
+                                </div>
+                                <div class="left">
+                                    <div class="add-left">Tên hệ đào tạo: </div>
+                                    <div class="add-left">Mã hệ đào tạo: </div>
+                                </div>
+                                <div class="right">
+                                    <div class="add-right"><input type="text" placeholder="VD:Chính quy"></div>
+                                    <div class="add-right"><input type="text" placeholder="VD:CQ"></div>
+                                </div>
+                                <div class="btn-action">
+                                    <button class="btn btn-save"><em class="fas fa-save"></em> Lưu</button>
+                                    <button class="btn btn-refresh" id="hdt-back"><em class="fas fa-save"></em> Làm mới</button>
+                                    <button class="btn btn-back"><em class="fas fa-save"></em> Trở về</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="content-hdt-full">
+                            <div class="content-hdt">
+                                <div class="hdt-tittle">
+                                    <em class="fas fa-home"></em> Danh sách
+                                </div>
+                            </div>
+                            <br>
+                            <div class="content-table">
+                                <table class="table-hdt" role="grid" aria-describedby="dataTableBuilder_info">
+                                    <tr>
+                                        <th id="name-mdt">Tên mã đào tạo</th>
+                                        <th id="ma-hdt">Mã hệ đạo tạo</th>
+                                        <th id="action-hdt">Thao tác</th>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
                     </div>
                     <!-- Quản lý lớp -->
                     <div class="center-parent3">
@@ -137,12 +233,12 @@
                     <div class="center-parent5">
                         <h2 style="text-align: center;">Quản lý sinh viên</h2>
                         </br>
-                        <div class="tittle-sv">
-                            <em class="far fa-envelope"></em>
+                        <div class="tittle-list">
+                            <em class="fas fa-home"></em>
                             <span class="student">
                                 > Sinh Viên >
                             </span>
-                            <button class="add-sv"><em class="fas fa-add"></em>Thêm mới</button>
+                            <button class="btn-addnew"><em class="fas fa-plus"></em> Thêm mới</button>
                         </div>
 
                         <div class="action-sv">
@@ -255,7 +351,9 @@
                                 </div>
                             </div>
                         </div>
-                        <output id="log-div"></output>
+                        <div style="overflow: auto; height: 50vh;">
+                            <output id="log-div"></output>
+                        </div>
                     </div>
 
                 </div>

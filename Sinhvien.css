@@ -1,4 +1,4 @@
-.center-parent5 .tittle-sv{
+.tittle-list{
   color: #31708f;
   background-color: #d9edf7;
   border-color: #bce8f1;
@@ -9,14 +9,13 @@
   margin-top: 8px;
 }
 
-.center-parent5 .tittle-sv .add-sv{
+.btn-addnew{
     background-color: #0088cc;
     padding: 9px;
     color: aliceblue;
     border-radius: 4px;
-    width: 90px;
 }
-.center-parent5 .tittle-sv .add-sv:hover{
+.btn-addnew:hover{
     background-color: #02354f;
     cursor: pointer;
 }
@@ -53,3 +52,93 @@ select{
     margin-left: 10%;
 }
 
+/* Hệ đào tạo */
+.content-hdt-full{
+    border: 1px solid #d9edf7;
+}
+.content-table{
+    width: 99%;
+}
+.content-table .table-hdt{
+    width: 100%;
+    border: 1px solid #b1b2b3;
+}
+.content-table .table-hdt th{
+    border: 1.4px solid #e1e4e7;
+    width: 33%;
+    padding: 8px;
+    line-height: 1.42857143;
+}
+.content-table{
+    margin: 0 5px 5px 5px;
+}
+.content-hdt{
+    background-color: #d9edf7;
+    padding: 5px;
+    color: #3375b8;
+    font-size: 1rem;
+}
+.content-hdt-full{
+    width: 100%;
+}
+.content-hdt-full{
+    width: 100%;
+}
+.content-hdt-full .left{
+    color: #2b2c2d;
+    float: left;
+    text-align: right;
+    width: 30%;
+    margin-right: 20px;
+    padding: 3px;
+    margin-top: 3px;
+}
+
+.content-hdt-full .right{
+    width: 90%;
+}
+
+.content-hdt-full .right .add-right input{
+    border: 1px solid #b1bbc1;
+    padding: 2px;
+    margin-top: 3px;
+    width: 50%;
+}
+
+.content-hdt-full .btn-action{
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.content-hdt-full .btn-action .btn{
+    background-color: #0088cc;
+    padding: 9px;
+    color: aliceblue;
+    border-radius: 2px;
+    width: 100px;
+}
+.content-hdt-full .btn-action .btn:hover{
+    background-color: #02354f;
+    cursor: pointer
+}
+
+.conn{
+    background-color: #ffffff;
+    display: none;
+}
+.conn .hdt-tittle{
+    background-color: #b6c9c4;
+    margin-bottom: 20px;
+    padding: 8px;
+    color: #1671cc;
+}
+/* khoa */
+.content-table .table-k th{
+    border: 1.4px solid #e1e4e7;
+    padding: 8px;
+    line-height: 1.42857143;
+}
+.content-table .table-k{
+    width: 90%;
+}

@@ -69,3 +69,14 @@ $('.close').click(function(e) {
     e.preventDefault();
     $('.tittle').hide();
 });
+
+$(function() {
+    $('.btn-hdt').click(function(e) {
+        e.preventDefault();
+        $('.conn').show();
+    });
+    $('.btn-back').click(function(e) {
+        e.preventDefault();
+        $('.conn').hide();
+    });
+});
