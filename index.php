@@ -1,3 +1,8 @@
+<?php
+require_once ('dbhelp.php');
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -21,13 +26,13 @@
 	<!-- Latest compiled JavaScript -->
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
     <link rel="shortcut icon" href="images/cat1.png">
-    <title>Do An</title>
+    <title>Quản lý đồ án sinh viên</title>
 </head>
 
 <body>
 
     <!-- header -->
-    <header>
+    <header style="background:#91b2d6">
         <div class="container flex j-between">
             <div class="header-left flex j-center a-center">
                 <div class="bar flex">
@@ -38,8 +43,8 @@
 
             <div class="header-right flex j-center a-center">
                 <ul class="use flex">
-                    <li><i class="fa fa-user" aria-hidden="true"></i><a href="#"> Hoàng Vương</a>
-                        <div class="sub-menu-1">
+                    <li><i class="fa fa-user" aria-hidden="true"></i><a href="#" style="color:white"> Hoàng Vương</a>
+                        <div class="sub-menu-1" style="background:#91b2d6">
                             <ul>
                                 <li><a href="#">Đổi tài khoản</a></li>
                                 <li><a href="#">Đăng xuất</a></li>
@@ -199,22 +204,10 @@
 
                             <!--  -->
                             <div class="content-hdt-full conn">
-                                <div class="hdt-tittle">
-                                    <em class="fas fa-home"></em> Thêm mới hệ đào tạo
-                                </div>
-                                <div class="left">
-                                    <div class="add-left">Tên hệ đào tạo: </div>
-                                    <div class="add-left">Mã hệ đào tạo: </div>
-                                </div>
-                                <div class="right">
-                                    <div class="add-right"><input type="text" placeholder="VD:Chính quy"></div>
-                                    <div class="add-right"><input type="text" placeholder="VD:CQ"></div>
-                                </div>
-                                <div class="btn-action">
-                                    <button class="btn btn-save"><em class="fas fa-save"></em> Lưu</button>
-                                    <button class="btn btn-refresh" id="hdt-back"><em class="fas fa-save"></em> Làm mới</button>
-                                    <button class="btn btn-back"><em class="fas fa-save"></em> Trở về</button>
-                                </div>
+                                <?php
+                                require_once ('input.php');
+                                ?>
+                                </form>
                             </div>
                         </div>
 
@@ -227,15 +220,59 @@
                             <br>
                             <div class="content-table">
                                 <table class="table-hdt" role="grid" aria-describedby="dataTableBuilder_info">
+                                <thead>
                                     <tr>
-                                        <th id="name-mdt">Tên mã đào tạo</th>
-                                        <th id="ma-hdt">Mã hệ đạo tạo</th>
-                                        <th id="action-hdt">Thao tác</th>
+                                        <th id="stt-hdt" >STT</th>
+                                        <th id="ma-hdt" >Mã hệ đạo tạo</th>
+                                        <th id="name-mdt" >Tên mã đào tạo</th>
+                                        <th id="action-hdt" >Sửa</th>
+                                        <th id="action-hdt" >Xóa</th>
                                     </tr>
+                                </thead>    
+                                <tbody>
+                                    <?php
+                                        if(isset($_GET['s']) && $_GET['s'] != ''){
+                                            $sql ='select * from tblhedaotao where TenDaoTao like "%'.$_GET['s'].'%"';
+                                        }
+                                        else{
+                                            $sql ='select * from tblhedaotao';
+                                        }
+
+                                        $studentList = executeResult($sql);
+
+                                        $index = 1;
+                                        foreach ($studentList as $std) {
+	                                        echo '<tr>
+			                                        <td>'.($index++).'</td>
+			                                        <td>'.$std['MaDaoTao'].'</td>
+                                                    <td>'.$std['TenDaoTao'].'</td>
+                                                    <td><button class="btn btn-warning btn-hdt" onclick=\'window.open("input.php?MaDaoTao='.$std['MaDaoTao'].'","_self")\'>Edit</button></td>
+			                                        <td><button class="btn btn-dange" onclick="deleteStudent('.$std['MaDaoTao'].')">Delete</button></td>
+		                                        </tr>';
+                                        }
+                                    ?>
+                                </tbody>
                                 </table>
+                                
                             </div>
                         </div>
                     </div>
+
+                    <!-- Xóa hệ đào tạo -->
+                    <script type="text/javascript">
+		                function deleteStudent(id) {
+			            option = confirm('Bạn có muốn xoá sinh viên này không')
+			            if(!option) {
+				            return;
+			            }
+			            console.log(id)
+			            $.post('delete_student.php', {'MaDaoTao': id}, function(data) {
+				        alert(data)
+				        location.reload()
+			                })
+		                }
+	                </script>
+
                     <!-- Quản lý lớp -->
                     <div class="center-parent3">
                         <h2 style="text-align: center;">Quản lý lớp</h2>

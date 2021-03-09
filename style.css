@@ -124,7 +124,7 @@ h6 {
 }
 
 header {
-  background: #5A94F4;
+  background: #898d93;
   position: fixed;
   z-index: 9999;
   width: 100%;
@@ -477,4 +477,15 @@ h2 {
   margin-bottom: 1rem;
 }
 
+th{
+  background-color: #006699;
+  color: white;
+}
+td{
+  border: 1px solid #b4d2e0;
+  padding: 5px;
+}
+table{
+  width: 100%;
+}
 /*# sourceMappingURL=style.css.map */
