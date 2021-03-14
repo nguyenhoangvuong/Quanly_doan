@@ -2,24 +2,22 @@
 <div class="row">
                     <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                         <div class="card">
-                            <h5 class="card-header">Danh sách sản phẩm</h5>
+                            <h5 class="card-header">Danh sách lớp</h5>
                             <div class="card-body">
                                 <div class="table-responsive">
                                     <table class="table table-striped table-bordered first">
                                             <tr>
-                                                <th>ID</th>
-                                                <th>Name</th>
-                                                <th>Cat name</th>
-                                                <th>Price</th>
-                                                <th>Sale off</th>
-                                                <th>Images</th>
-                                                <th>Description</th>
-                                                <th>Status</th>
+                                                <th>STT</th>
+                                                <th>Mã lớp</th>
+                                                <th>Tên lớp</th>
+                                                <th>Tên khoa</th>
+                                                <th>Tên chuyên ngành</th>
+                                                <th>Thông tin</th>
                                                 <th>Xử lý</th>
                                             </tr>
 
                                             <?php
-                                                $sqlSelect = "select * from tbl_product";
+                                                $sqlSelect = "select * from tbl_lop,tbl_khoa,tbl_chuyennganh where tbl_lop.khoa_id = tbl_khoa.ma_khoa and tbl_chuyennganh.ma_chuyen_nganh = tbl_lop.chuyennganh_id";
                                                 $result = mysqli_query($conn,$sqlSelect);
                                                 $i = 0;
                                                 while($row = mysqli_fetch_assoc($result)){
@@ -27,18 +25,14 @@
                                             ?>
                                             <tr>
                                                 <td><?php echo $i ?></td>
-                                                <td><?php echo $row["name"] ?></td>
-                                                <td><?php echo $row["cat_id"] ?></td>
-                                                <td><?php echo $row["price"] ?></td>
-                                                <td><?php echo $row["sale_off"] ?></td>
+                                                <td><?php echo $row["ma_lop"] ?></td>
+                                                <td><?php echo $row["ten_lop"] ?></td>
+                                                <td><?php echo $row["ten_khoa"] ?></td>
+                                                <td><?php echo $row["ten_chuyen_nganh"] ?></td>
+                                                <td><?php echo $row["thong_tin"] ?></td>
                                                 <td>
-                                                    <img src="<?php echo $row["image"] ?>" alt="" width="50">
-                                                </td>
-                                                <td><?php echo $row["description"] ?></td>
-                                                <td><?php echo ($row["sta_tus"])?"Hiển thị":"Ẩn" ?></td>
-                                                <td>
-                                                    <a href="index.php?module=editproduct&id=<?php echo $row["id"] ?>"><em class="fas fa-edit"></em></a>
-                                                    <a href="index.php?module=editproduct&id=<?php echo $row["id"] ?>"><em class="fas fa-trash-alt"></em></a>
+                                                    <a href="index.php?module=editlop&ma_lop=<?php echo $row["ma_lop"] ?>"><em class="fas fa-edit"></em></a>
+                                                    <a href="index.php?module=dellop&ma_lop=<?php echo $row["ma_lop"] ?>"><em class="fas fa-trash-alt"></em></a>
                                                 </td>
                                             </tr>
 
@@ -50,7 +44,7 @@
                                 <div class="row" style="margin-top:2%">
                                             <div style="margin-left:90%">
                                                 <p class="text-right">
-                                                    <a href="index.php?module=addproduct" class="btn btn-space btn-primary">Thêm mới</em></a>
+                                                    <a href="index.php?module=addlop" class="btn btn-space btn-primary">Thêm mới</em></a>
                                                 </p>
                                             </div>
                                         </div>
