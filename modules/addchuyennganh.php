@@ -36,8 +36,8 @@
                                             </select>
                                         </div>
                                         <div class="form-group">
-                                            <label for="inputRepeatPassword">Mô tả</label></label>
-                                            <textarea name="mo_ta" id="mo_ta" cols="70" rows="10"> <?php echo $rowCat["mo_ta"] ?> </textarea>
+                                            <label for="inputUserName">Mô tả</label>
+                                            <textarea id="mo_ta_chuyen_nganh" type="text" name="mo_ta_chuyen_nganh" placeholder="Nhập mô tả" class="form-control"></textarea>
                                         </div>
                                         <div class="row">
                                             <div class="col-sm-6 pl-0">

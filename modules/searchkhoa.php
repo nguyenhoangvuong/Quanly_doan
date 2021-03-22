@@ -1,3 +1,6 @@
+<?php
+    
+?>
 <div class="container-fluid  dashboard-content">
 <div class="row">
 
@@ -12,8 +15,10 @@
                                 
                                 <div style="float:right;width:300px">
                                 <form action="" method="get">
-                                    <input class="form-control" type="text" placeholder="Search.." name="q">
-                                    <a href="index.php?module=searchkhoa" class="btn btn-space btn-primary">Tìm kiếm</em></a>
+                                    <input class="form-control" type="text" placeholder="Search.." name="tukhoa">
+                                    <p class="text-right">
+                                        <button type="submit" class="btn btn-space btn-primary" name="addNew">Tìm kiếm</button>
+                                    </p>
                                 </form>
 
                                 </div>
@@ -28,8 +33,14 @@
 
                                             <!-- php -->
                                             <?php
-                                                $sqlSelect = "select * from tbl_khoa";
-                                                $result = mysqli_query($conn,$sqlSelect) or die("Lỗi truy vấn danh sách khoa");
+                                                if(isset($_POST["addNew"])){
+                                                    $ten_khoa = $_POST["tukhoa"];
+                                                    $sqlInsert = "select * from tbl_khoa where  like '$ten_khoa'";
+                                                    mysqli_query($conn,$sqlInsert);
+                                                    header('Location: index.php?module=listkhoa');
+                                                    $result = ""; 
+                                            }
+                                            $result = mysqli_query($conn,$sqlInsert);
                                                 if(mysqli_num_rows($result) > 0){
                                                     $count = 0;
                                                     while($row = mysqli_fetch_assoc($result)) {
@@ -49,13 +60,6 @@
                                             } ?>
                                     </table>
                                 </div>
-                                <div class="row" style="margin-top:2%">
-                                            <div style="margin-left:90%">
-                                                <p class="text-right">
-                                                    <a href="index.php?module=addkhoa" class="btn btn-space btn-primary">Thêm mới</em></a>
-                                                </p>
-                                            </div>
-                                        </div>
                             </div>
                         </div>
                     </div>

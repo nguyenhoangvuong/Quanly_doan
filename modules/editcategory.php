@@ -6,12 +6,7 @@
         $id = $_GET["id"];
         $sqlGetId = "select * from tbl_category where id = ".$id;
         $result = mysqli_query($conn,$sqlGetId);
-        // fetch lấy ra dòng dạng mảng
         $row = mysqli_fetch_row($result);
-        /// echo "<prE>";
-        /// print_r($row);
-        /// die;
-
         $catname = $row[1];
         $sta_tus = $row[2];
     }

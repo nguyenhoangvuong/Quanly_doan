@@ -32,7 +32,7 @@
                                                 <td><?php echo $row["thong_tin"] ?></td>
                                                 <td>
                                                     <a href="index.php?module=editlop&ma_lop=<?php echo $row["ma_lop"] ?>"><em class="fas fa-edit"></em></a>
-                                                    <a href="index.php?module=dellop&ma_lop=<?php echo $row["ma_lop"] ?>"><em class="fas fa-trash-alt"></em></a>
+                                                    <a onclick="Del('<?php echo $row['ten_lop'] ?>')" href="index.php?module=dellop&ma_lop=<?php echo $row["ma_lop"] ?>"><em class="fas fa-trash-alt"></em></a>
                                                 </td>
                                             </tr>
 
@@ -54,3 +54,8 @@
 
                 </div>
 </div>
+<script>
+    function Del(ten){
+        return confirm("Bạn có chắc chắn muốn xóa lớp : "+ten+" ?")
+    }
+</script>

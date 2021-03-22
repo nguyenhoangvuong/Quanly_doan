@@ -28,7 +28,7 @@
                                                 <td><?php echo $row["ten_hdt"] ?></td>
                                                 <td>
                                                     <a href="index.php?module=edithedaotao&ma_hdt=<?php echo $row["ma_hdt"] ?>"><em class="fas fa-edit"></em></a>
-                                                    <a href="index.php?module=delhedaotao&ma_hdt=<?php echo $row["ma_hdt"] ?>"><em class="fas fa-trash-alt"></em></a>
+                                                    <a onclick="Del('<?php echo $row['ten_hdt'] ?>')" href="index.php?module=delhedaotao&ma_hdt=<?php echo $row["ma_hdt"] ?>"><em class="fas fa-trash-alt"></em></a>
                                                 </td>
                                             </tr>
                                             <?php }
@@ -47,3 +47,8 @@
                     </div>
                 </div>
 </div>
+<script>
+    function Del(ten){
+        return confirm("Bạn có chắc chắn muốn xóa hệ đào tạo : " + ten +" ?")
+    }
+</script>

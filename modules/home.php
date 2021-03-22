@@ -232,6 +232,14 @@
                             <div class="col-xl-6 col-lg-12 col-md-12 col-sm-12 col-12">
                                 <div class="card">
                                     <div class="card-header">
+                                        <!-- <div class="float-right">
+                                                <select class="custom-select">
+                                                    <option selected>Today</option>
+                                                    <option value="1">Weekly</option>
+                                                    <option value="2">Monthly</option>
+                                                    <option value="3">Yearly</option>
+                                                </select>
+                                            </div> -->
                                         <h5 class="mb-0"> Product Sales</h5>
                                     </div>
                                     <div class="card-body">

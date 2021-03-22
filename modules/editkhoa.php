@@ -1,7 +1,4 @@
 <?php
-    $ten_khoa = "";
-    $mo_ta = "";
-
     if(isset($_GET["module"]) && isset($_GET["ma_khoa"])){
         $ma_khoa = $_GET["ma_khoa"];
         $sqlGetId = "select * from tbl_khoa where ma_khoa = ".$ma_khoa;

@@ -1,6 +1,5 @@
 
 <?php
-    
     $sqlSelectCat1 = "select * from tbl_khoa";
     $resultCat1 = mysqli_query($conn,$sqlSelectCat1) or die("Lỗi truy vấn danh mục");
     $sqlSelectCat = "select * from tbl_chuyennganh";

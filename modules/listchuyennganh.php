@@ -22,16 +22,15 @@
                                                 while($row = mysqli_fetch_assoc($result)){
                                                     $i++;
                                             ?>
-                                            
                                             <tr>
                                                 <td><?php echo $i ?></td>
                                                 <td><?php echo $row["ma_chuyen_nganh"] ?></td>
                                                 <td><?php echo $row["ten_chuyen_nganh"] ?></td>
                                                 <td><?php echo $row["ten_khoa"] ?></td>
-                                                <td><?php echo $row["mo_ta"] ?></td>
+                                                <td><?php echo $row["mo_ta_chuyen_nganh"] ?></td>
                                                 <td>
                                                     <a href="index.php?module=editchuyennganh&ma_chuyen_nganh=<?php echo $row["ma_chuyen_nganh"] ?>"><em class="fas fa-edit"></em></a>
-                                                    <a href="index.php?module=delchuyennganh&ma_chuyen_nganh=<?php echo $row["ma_chuyen_nganh"] ?>"><em class="fas fa-trash-alt"></em></a>
+                                                    <a onclick="return Del('<?php echo $row['ten_chuyen_nganh']; ?>')"  href="index.php?module=delchuyennganh&ma_chuyen_nganh=<?php echo $row["ma_chuyen_nganh"] ?>"><em class="fas fa-trash-alt"></em></a>
                                                 </td>
                                             </tr>
 
@@ -53,3 +52,8 @@
 
                 </div>
 </div>
+<script>
+    function Del(ten_chuyen_nganh){
+        return confirm("Bạn có chắc chắn muốn xóa chuyên ngành : " +ten_chuyen_nganh + "?");
+    }
+</script>
