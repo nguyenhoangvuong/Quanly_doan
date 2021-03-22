@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th3 15, 2021 lúc 03:42 AM
+-- Thời gian đã tạo: Th3 22, 2021 lúc 04:35 PM
 -- Phiên bản máy phục vụ: 10.4.17-MariaDB
 -- Phiên bản PHP: 7.3.27
 
@@ -49,9 +49,17 @@ INSERT INTO `tbl_category` (`id`, `cat_name`, `sta_tus`) VALUES
 CREATE TABLE `tbl_chuyennganh` (
   `ma_chuyen_nganh` int(11) NOT NULL,
   `ten_chuyen_nganh` varchar(100) DEFAULT NULL,
-  `mo_ta` varchar(100) DEFAULT NULL,
+  `mo_ta_chuyen_nganh` varchar(100) DEFAULT NULL,
   `khoa_id` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Đang đổ dữ liệu cho bảng `tbl_chuyennganh`
+--
+
+INSERT INTO `tbl_chuyennganh` (`ma_chuyen_nganh`, `ten_chuyen_nganh`, `mo_ta_chuyen_nganh`, `khoa_id`) VALUES
+(15, '1111', '3', 2),
+(16, 'Chuyên ngành 12', '22', 2);
 
 -- --------------------------------------------------------
 
@@ -85,6 +93,13 @@ CREATE TABLE `tbl_giaovien` (
   `chuyennganh_id` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Đang đổ dữ liệu cho bảng `tbl_giaovien`
+--
+
+INSERT INTO `tbl_giaovien` (`ma_giao_vien`, `ten_giao_vien`, `hinh_giao_vien`, `gmail_giao_vien`, `khoa_id`, `chuyennganh_id`) VALUES
+(27, 'khoa công trình1sđssadsasada1', '61101419_653979701721879_2264678578064982016_o.jpg', '124$Gmailc.om1', 3, 16);
+
 -- --------------------------------------------------------
 
 --
@@ -95,6 +110,13 @@ CREATE TABLE `tbl_hedaotao` (
   `ma_hdt` int(11) NOT NULL,
   `ten_hdt` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Đang đổ dữ liệu cho bảng `tbl_hedaotao`
+--
+
+INSERT INTO `tbl_hedaotao` (`ma_hdt`, `ten_hdt`) VALUES
+(1, 'Chính quy');
 
 -- --------------------------------------------------------
 
@@ -108,6 +130,15 @@ CREATE TABLE `tbl_khoa` (
   `mo_ta` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Đang đổ dữ liệu cho bảng `tbl_khoa`
+--
+
+INSERT INTO `tbl_khoa` (`ma_khoa`, `ten_khoa`, `mo_ta`) VALUES
+(2, 'khoa công trình', '12'),
+(3, 'Khoa công nghệ thông tin', '1234'),
+(4, 'Khoa công nghệ thông tin', '123');
+
 -- --------------------------------------------------------
 
 --
@@ -117,10 +148,17 @@ CREATE TABLE `tbl_khoa` (
 CREATE TABLE `tbl_lop` (
   `ma_lop` int(11) NOT NULL,
   `ten_lop` varchar(50) DEFAULT NULL,
-  `thong_tin` varchar(100) DEFAULT NULL,
   `khoa_id` int(11) DEFAULT NULL,
-  `chuyennganh_id` int(11) DEFAULT NULL
+  `chuyennganh_id` int(11) DEFAULT NULL,
+  `thong_tin` varchar(100) CHARACTER SET utf8 NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Đang đổ dữ liệu cho bảng `tbl_lop`
+--
+
+INSERT INTO `tbl_lop` (`ma_lop`, `ten_lop`, `khoa_id`, `chuyennganh_id`, `thong_tin`) VALUES
+(17, '111111', 2, 16, '12');
 
 -- --------------------------------------------------------
 
@@ -132,6 +170,13 @@ CREATE TABLE `tbl_nienkhoa` (
   `ma_nien_khoa` int(11) NOT NULL,
   `ten_nien_khoa` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Đang đổ dữ liệu cho bảng `tbl_nienkhoa`
+--
+
+INSERT INTO `tbl_nienkhoa` (`ma_nien_khoa`, `ten_nien_khoa`) VALUES
+(1, '2020-2021');
 
 -- --------------------------------------------------------
 
@@ -155,7 +200,8 @@ CREATE TABLE `tbl_product` (
 --
 
 INSERT INTO `tbl_product` (`pro_id`, `name`, `price`, `sale_off`, `description`, `cat_id`, `image`, `sta_tus`) VALUES
-(1, 'Nguyễn Hoàng Vương', 111, 1, '111', 1, 'uploads/604ec963b41ad5.17371756.png', 1);
+(1, 'Nguyễn Hoàng Vương', 111, 1, '111', 1, 'uploads/604ec963b41ad5.17371756.png', 1),
+(2, 'Nguyễn Hoàng Vương', 1111, 1111, '9', 1, 'uploads/6050e0e257cf99.71920089.png', 1);
 
 -- --------------------------------------------------------
 
@@ -252,7 +298,7 @@ ALTER TABLE `tbl_category`
 -- AUTO_INCREMENT cho bảng `tbl_chuyennganh`
 --
 ALTER TABLE `tbl_chuyennganh`
-  MODIFY `ma_chuyen_nganh` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `ma_chuyen_nganh` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT cho bảng `tbl_danhsachdoan`
@@ -264,37 +310,37 @@ ALTER TABLE `tbl_danhsachdoan`
 -- AUTO_INCREMENT cho bảng `tbl_giaovien`
 --
 ALTER TABLE `tbl_giaovien`
-  MODIFY `ma_giao_vien` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `ma_giao_vien` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 
 --
 -- AUTO_INCREMENT cho bảng `tbl_hedaotao`
 --
 ALTER TABLE `tbl_hedaotao`
-  MODIFY `ma_hdt` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `ma_hdt` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT cho bảng `tbl_khoa`
 --
 ALTER TABLE `tbl_khoa`
-  MODIFY `ma_khoa` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `ma_khoa` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT cho bảng `tbl_lop`
 --
 ALTER TABLE `tbl_lop`
-  MODIFY `ma_lop` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `ma_lop` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT cho bảng `tbl_nienkhoa`
 --
 ALTER TABLE `tbl_nienkhoa`
-  MODIFY `ma_nien_khoa` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `ma_nien_khoa` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT cho bảng `tbl_product`
 --
 ALTER TABLE `tbl_product`
-  MODIFY `pro_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `pro_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT cho bảng `tbl_sinhvien`
