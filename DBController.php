@@ -6,7 +6,6 @@ class DBController {
 	private $password = "";
 	private $database = "dbdaovan1";
 	private $conn;
-	
         function __construct() {
         $this->conn = $this->connectDB();
 	}	
@@ -19,8 +18,9 @@ class DBController {
                 while($row=mysqli_fetch_assoc($result)) {
                 $resultset[] = $row;
                 }		
-                if(!empty($resultset))
-                return $resultset;
+                if(!empty($resultset)){
+                	return $resultset;
+				}
 	}
 }
 ?>

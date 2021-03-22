@@ -1,6 +1,6 @@
 <?php
     ob_start();
-    include("../connecttion.php");
+    include("../day3/connecttion.php");
     include("./function.php");
 ?>
 <!doctype html>
